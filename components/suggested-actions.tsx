@@ -20,24 +20,24 @@ function PureSuggestedActions({
 }: SuggestedActionsProps) {
   const suggestedActions = [
     {
-      title: 'What are the advantages',
-      label: 'of using Next.js?',
-      action: 'What are the advantages of using Next.js?',
+      title: 'Apa Keuntungan',
+      label: 'dari menggunakan bluIntelligence?',
+      action: 'Apa Keuntungan dari menggunakan bluIntelligence?',
     },
     {
-      title: 'Write code to',
-      label: `demonstrate djikstra's algorithm`,
-      action: `Write code to demonstrate djikstra's algorithm`,
+      title: 'Carikan File',
+      label: `prosedur penggunaan printer kantor`,
+      action: `Carikan File prosedur penggunaan printer kantor`,
     },
     {
-      title: 'Help me write an essay',
-      label: `about silicon valley`,
-      action: `Help me write an essay about silicon valley`,
+      title: 'Bantu Buat',
+      label: `undangan meeting yang kreatif`,
+      action: `Bantu Buat undangan meeting yang kreatif`,
     },
     {
-      title: 'What is the weather',
-      label: 'in San Francisco?',
-      action: 'What is the weather in San Francisco?',
+      title: 'Apa Aja Promo',
+      label: 'blu di bulan ini?',
+      action: 'Apa Aja Promo blu di bulan ini?',
     },
   ];
 

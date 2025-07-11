@@ -62,6 +62,7 @@ export function getStreamContext() {
   return globalStreamContext;
 }
 
+//NOTE entry point for chat
 export async function POST(request: Request) {
   let requestBody: PostRequestBody;
 

@@ -14,6 +14,7 @@ const filePartSchema = z.object({
 
 const partSchema = z.union([textPartSchema, filePartSchema]);
 
+//request schema for chat
 export const postRequestBodySchema = z.object({
   id: z.string().uuid(),
   message: z.object({
