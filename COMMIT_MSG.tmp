@@ -1,0 +1,15 @@
+docs: Update README.md and remove unused images
+
+## Documentation Update
+
+### Description
+This commit updates the README.md to reflect that the project is a sandbox for Next.js preparation, forked from ChatSDK. It also removes unused Open Graph and Twitter images.
+
+### Changes
+- Updated `README.md` with a new description.
+- Deleted `app/(chat)/opengraph-image.png`.
+- Deleted `app/(chat)/twitter-image.png`.
+
+### Action Items for follow-up PR
+- Verify all links in the new `README.md` are still valid.
+- Consider adding a new, more relevant hero image or project logo to the `README.md`.
