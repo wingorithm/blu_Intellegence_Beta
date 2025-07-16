@@ -18,13 +18,14 @@ import {
   saveMessages,
 } from '@/lib/db/queries';
 import { convertToUIMessages, generateUUID } from '@/lib/utils';
-import { generateTitleFromUserMessage } from '../../actions';
+import { generateTitleFromUserMessage } from '@/lib/server-utils';
 import { createDocument } from '@/lib/ai/tools/create-document';
 import { updateDocument } from '@/lib/ai/tools/update-document';
 import { requestSuggestions } from '@/lib/ai/tools/request-suggestions';
 import { getWeather } from '@/lib/ai/tools/get-weather';
 import { isProductionEnvironment } from '@/lib/constants';
 import { myProvider } from '@/lib/ai/providers';
+
 import { entitlementsByUserType } from '@/lib/ai/entitlements';
 import { postRequestBodySchema, type PostRequestBody } from './schema';
 import { geolocation } from '@vercel/functions';
@@ -62,7 +63,7 @@ export function getStreamContext() {
   return globalStreamContext;
 }
 
-//NOTE entry point for chat
+//NOTE entry point for chat (Move To Backend)
 export async function POST(request: Request) {
   let requestBody: PostRequestBody;
 
@@ -87,6 +88,7 @@ export async function POST(request: Request) {
     } = requestBody;
 
     const session = await auth();
+    console.log("selectedChatModel: ", JSON.stringify(selectedChatModel, null, 2));
 
     if (!session?.user) {
       return new ChatSDKError('unauthorized:chat').toResponse();
@@ -184,6 +186,8 @@ export async function POST(request: Request) {
           },
         });
 
+        console.log("result: ", JSON.stringify(result, null, 2));
+        console.log("system: ", JSON.stringify(systemPrompt({ selectedChatModel, requestHints }), null, 2));
         result.consumeStream();
 
         dataStream.merge(
@@ -211,7 +215,9 @@ export async function POST(request: Request) {
       },
     });
 
+    console.log("stream: ", JSON.stringify(stream, null, 2));
     const streamContext = getStreamContext();
+    console.log("streamContext: ", JSON.stringify(streamContext, null, 2));
 
     if (streamContext) {
       return new Response(
