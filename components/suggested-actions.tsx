@@ -30,13 +30,13 @@ function PureSuggestedActions({
       action: `Carikan File prosedur penggunaan printer kantor`,
     },
     {
-      title: 'Bantu Buat',
-      label: `undangan meeting yang kreatif`,
+      title: 'HOT News 🔥',
+      label: `Perubahan biaya admin transfer dari BCA sekara...`,
       action: `Bantu Buat undangan meeting yang kreatif`,
     },
     {
-      title: 'Apa Aja Promo',
-      label: 'blu di bulan ini?',
+      title: 'Kabar Gembira untuk Nasabah 🥂',
+      label: 'tentang promo blu aniverssary ke #4 ada ba...',
       action: 'Apa Aja Promo blu di bulan ini?',
     },
   ];
